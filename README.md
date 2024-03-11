@@ -1,6 +1,7 @@
 # LIS-4370-Module-9-Visualization-in-R
 
 library(ggplot2)
+library(lattice)
 
 setwd("/Users/Steven Wang/Downloads")
 df <- read.csv("Affairs.csv")
@@ -11,5 +12,4 @@ boxplot(affairs ~ AgeGroup, data = df, main = "Affairs by Age", xlab = "Age Grou
 
 ggplot(df, aes(x = factor(age), y = affairs, fill = factor(age))) + geom_boxplot() + labs(title = "Affairs by Age") + theme(plot.title = element_text(hjust = 0.5)) + xlab("Age") + ylab("Affairs")
 
-library(lattice)
 bwplot(age ~ affairs, df, main = "Affairs by Age", xlab = "Affairs", ylab = "Age Groups")
